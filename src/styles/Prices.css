@@ -1,0 +1,192 @@
+.prices {
+  max-width: min(320px, 90vw);
+  display: flex;
+  flex-direction: column;
+  border-radius: clamp(1.2rem, 3vw, 1.5rem);
+  background-color: #25d0a0;
+  padding: clamp(1.2rem, 3vw, 1.5rem);
+  box-shadow: 0px 0px clamp(20px, 4vw, 25px) rgba(0, 0, 0, 0.3);
+  flex: 1 1 clamp(280px, 45vw, 300px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0 auto;
+}
+
+.price {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  line-height: 1;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.price-period {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-left: clamp(0.2rem, 0.5vw, 0.25rem);
+}
+
+.lists {
+  margin-top: clamp(2rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: clamp(0.6rem, 1.5vw, 0.75rem);
+  row-gap: clamp(0.6rem, 1.5vw, 0.75rem);
+  font-size: clamp(0.8rem, 1.8vw, 0.875rem);
+  line-height: clamp(1.1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 1);
+  list-style: none;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.list svg {
+  height: clamp(0.8rem, 2vw, 1rem);
+  width: clamp(0.8rem, 2vw, 1rem);
+  flex-shrink: 0;
+}
+
+.list span {
+  margin-left: clamp(0.8rem, 2vw, 1rem);
+}
+
+.action {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: clamp(0.5rem, 1.5vw, 0.625rem) clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 600;
+  text-align: center;
+  font-size: clamp(0.8rem, 1.8vw, 0.875rem);
+  color: rgba(0, 0, 0, 1);
+  outline: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.action:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: transparent;
+}
+
+.prices-section {
+  gap: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(0.8rem, 2vw, 1rem);
+  margin-top: clamp(-40px, -6vw, -50px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prices:hover {
+  transform: translateY(clamp(-4px, -1vw, -6px));
+  box-shadow: 0px clamp(12px, 2.5vw, 15px) clamp(25px, 4vw, 35px)
+    rgba(0, 0, 0, 0.35);
+}
+
+.highlight {
+  background-image: linear-gradient(135deg, #25d0a0 0%, #1bb489 100%);
+  box-shadow: 0 clamp(10px, 2vw, 12px) clamp(30px, 5vw, 40px)
+    rgba(31, 197, 158, 0.45);
+  transform: scale(1.02);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(0.8rem, 2vw, 1rem);
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+.plan-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+}
+
+.badge {
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(0.65rem, 1.3vw, 0.75rem);
+  padding: clamp(0.2rem, 0.5vw, 0.25rem) clamp(0.4rem, 1vw, 0.5rem);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+}
+
+.plan-subtitle {
+  margin-top: clamp(0.6rem, 1.5vw, 0.75rem);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  line-height: 1.4;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 1024px) {
+  .prices-section {
+    gap: clamp(1.2rem, 2.5vw, 1.8rem);
+    padding: clamp(1.2rem, 2.5vw, 1.8rem) clamp(0.8rem, 2vw, 1rem);
+  }
+
+  .prices {
+    flex: 1 1 clamp(250px, 40vw, 280px);
+  }
+}
+
+@media (max-width: 768px) {
+  .prices-section {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 2rem);
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(15px, 3vw, 20px);
+  }
+
+  .prices {
+    max-width: min(400px, 90vw);
+    flex: none;
+  }
+
+  .highlight {
+    transform: none;
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .prices-section {
+    padding: 1.5rem 15px;
+    gap: 1.5rem;
+  }
+
+  .prices {
+    max-width: min(350px, 95vw);
+    padding: 1.2rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    align-self: flex-end;
+  }
+
+  .list {
+    align-items: flex-start;
+  }
+}

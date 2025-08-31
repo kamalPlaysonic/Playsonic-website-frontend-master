@@ -1,0 +1,151 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Section Styling */
+.playsonic-section {
+  padding: clamp(40px, 6vw, 60px) clamp(15px, 3vw, 20px);
+  text-align: center;
+  color: #fff;
+  background-image: url("../assets/images/introduction-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.playsonic-section .title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: clamp(30px, 5vw, 40px);
+}
+
+/* Cards Container */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(15px, 3vw, 20px);
+  max-width: min(1000px, 95vw);
+  margin: 0 auto;
+}
+
+/* Enhanced responsive design */
+.steps:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 clamp(6px, 1.5vw, 8px) clamp(20px, 3vw, 25px)
+    rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 1024px) {
+  .steps-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: clamp(20px, 2vw, 30px);
+  }
+
+  .steps {
+    flex: 1;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .steps-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(15px, 2vw, 20px);
+  }
+
+  .steps {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .playsonic-section {
+    padding: clamp(30px, 5vw, 40px) clamp(15px, 4vw, 20px);
+  }
+
+  .steps-container {
+    gap: clamp(12px, 2.5vw, 15px);
+  }
+
+  .steps {
+    padding: clamp(18px, 3vw, 22px) clamp(15px, 3vw, 18px);
+  }
+
+  .steps-header {
+    flex-direction: column;
+    text-align: center;
+    gap: clamp(6px, 1.5vw, 8px);
+  }
+
+  .steps p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .playsonic-section {
+    padding: clamp(25px, 4vw, 30px) 15px;
+  }
+
+  .steps {
+    padding: 18px 15px;
+  }
+
+  .steps-header .number {
+    width: clamp(20px, 5vw, 24px);
+    height: clamp(20px, 5vw, 24px);
+    font-size: clamp(0.7rem, 2vw, 0.8rem);
+  }
+}
+
+/* Individual Step */
+.steps {
+  background-color: #fff;
+  color: #000;
+  padding: clamp(20px, 4vw, 25px) clamp(15px, 3vw, 20px);
+  border-radius: clamp(12px, 2vw, 15px);
+  box-shadow: 0 clamp(3px, 1vw, 5px) clamp(10px, 2vw, 15px) rgba(0, 0, 0, 0.1);
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.steps-header {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 10px);
+  margin-bottom: clamp(12px, 2vw, 15px);
+}
+
+.steps-header .number {
+  background-color: #ccff00;
+  color: #000;
+  font-weight: bold;
+  border-radius: 50%;
+  width: clamp(24px, 4vw, 28px);
+  height: clamp(24px, 4vw, 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  flex-shrink: 0;
+}
+
+.steps h2 {
+  text-align: left;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: bold;
+  margin: 0;
+}
+
+.steps p {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  text-align: left;
+  line-height: 1.5;
+  margin: 0;
+}

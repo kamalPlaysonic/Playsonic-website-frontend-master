@@ -1,0 +1,232 @@
+/* ===== Background with animated gradient ===== */
+.contact-bg {
+  margin-top: 60px;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: linear-gradient(90deg, #00bfa6, #25d0a0, #00bfa6, #25d0a0);
+  background: #ffffff;
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Glassmorphism container ===== */
+.contact-container {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: clamp(15px, 3vw, 20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  max-width: min(700px, 95vw);
+  width: 100%;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  box-shadow: 0 clamp(6px, 1.5vw, 8px) clamp(25px, 4vw, 32px)
+    rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.contact-container.show {
+  opacity: 1;
+  transform: translateY(0);
+  background: linear-gradient(90deg, #00bfa6, #25d0a0);
+}
+
+/* ===== Header ===== */
+.contact-header {
+  text-align: center;
+  margin-bottom: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.contact-header h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: #ffffff;
+  margin-bottom: clamp(0.4rem, 1vw, 0.5rem);
+}
+
+.contact-header p {
+  color: #e0f7f4;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* ===== Form styling ===== */
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.contact-container.show .contact_form input,
+.contact-container.show .contact_form textarea,
+.contact-container.show .contact_form button {
+  opacity: 0;
+  animation: fadeZoomIn 0.6s ease forwards;
+}
+
+.contact-container.show .contact_form input:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.contact-container.show .contact_form input:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.contact-container.show .contact_form input:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.contact-container.show .contact_form textarea {
+  animation-delay: 0.8s;
+}
+.contact-container.show .contact_form button {
+  animation-delay: 1s;
+}
+
+.contact_form input,
+.contact_form textarea {
+  padding: clamp(0.7rem, 2vw, 0.85rem) clamp(0.8rem, 2vw, 1rem);
+  border-radius: clamp(10px, 2vw, 12px);
+  border: none;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+}
+
+.contact_form input:focus,
+.contact_form textarea:focus {
+  background: #fff;
+  color: linear-gradient(90deg, #00bfa6, #25d0a0);
+  box-shadow: 0 0 0 3px rgba(37, 208, 160, 0.4);
+  outline: none;
+}
+
+#message {
+  min-height: clamp(100px, 20vh, 130px);
+  resize: vertical;
+}
+
+/* ===== Button ===== */
+.contact_form button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #00bfa6;
+  padding: clamp(12px, 2.5vw, 14px) clamp(30px, 5vw, 40px);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: clamp(1px, 0.3vw, 2px);
+  border-radius: 10px;
+  border: 2px dashed #00bfa6;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0 1px 3px -1px,
+    0 0 clamp(10px, 2vw, 15px) rgba(37, 208, 160, 0.5);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  margin-top: clamp(15px, 3vw, 20px);
+  margin-left: clamp(0px, 1vw, 5px);
+}
+
+.contact_form button:hover {
+  transform: scale(1.05);
+  background-color: #fff;
+  color: #00bfa6;
+  border: 2px dashed #00bfa6;
+}
+
+.contact_form button:active {
+  transform: scale(0.98);
+  background-color: #87dbd0;
+}
+
+/* ===== Responsive ===== */
+/* Enhanced responsive design */
+@media (max-width: 1024px) {
+  .contact-bg {
+    padding: clamp(1.2rem, 2.5vw, 1.8rem);
+  }
+
+  .contact-container {
+    max-width: min(600px, 90vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-bg {
+    padding: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .contact-container {
+    max-width: min(500px, 95vw);
+    padding: clamp(1.2rem, 3vw, 1.5rem);
+  }
+
+  .contact_form {
+    gap: clamp(0.8rem, 2vw, 1rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-header h1 {
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
+  }
+
+  .contact-container {
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .contact_form input,
+  .contact_form textarea {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .contact_form button {
+    padding: 12px 25px;
+    font-size: 0.85rem;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-bg {
+    padding: 1rem;
+  }
+
+  .contact-container {
+    padding: 1.2rem;
+    border-radius: 15px;
+  }
+
+  .contact-header {
+    margin-bottom: 1rem;
+  }
+
+  .contact_form {
+    gap: 0.8rem;
+  }
+
+  #message {
+    min-height: 100px;
+  }
+}

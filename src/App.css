@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  justify-content: center;
+  /* Modern sports-themed background enhancement */
+  background-image: linear-gradient(
+      135deg,
+      rgba(179, 172, 172, 0.8) 0%,
+      rgba(44, 62, 80, 0.7) 100%
+    ),
+    url("https://www.istockphoto.com/photos/padel");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+/* Default styles for desktop */
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Tablets (screens ≤ 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Mobile (screens ≤ 768px) */
+@media (max-width: 768px) {
+  .body{
+    width: auto;
+  }
+
+  .container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+  }
+
+
+/* Small Mobile (screens ≤ 480px) */
+@media (max-width: 480px) {
+ .body{
+    width: auto;
+  }
+
+  .container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+  }
+
+
+
+/*Tailwind CSS → Highly flexible & modern.
+i shall choose between these 2
+Bootstrap → Comes with pre-built responsive grids.*/

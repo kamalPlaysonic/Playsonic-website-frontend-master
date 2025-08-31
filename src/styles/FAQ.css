@@ -1,0 +1,111 @@
+/* Section Title */
+#faq {
+  margin-top: 99px;
+  font-size: 36px;
+  color: #00bfa6;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Toggle styling (kept your design with smoother feel) */
+.toggle-container {
+  position: relative;
+  display: flex;
+  width: 300px;
+  background: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 0 auto 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.toggle-container input[type="radio"] {
+  display: none;
+}
+
+.toggle-option {
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.2s;
+  z-index: 2;
+}
+
+.toggle-option:hover {
+  transform: scale(1.05);
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #00bfa6;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+#clubs:checked ~ .toggle-slider {
+  transform: translateX(100%);
+}
+
+/* FAQ section container */
+.qa-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+/* Individual question card */
+.qa {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  border-radius: 20px;
+  padding: 20px 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.qa:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Question text */
+.question {
+  font-weight: 700;
+  font-size: 18px;
+  color: #00bfa6;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Answer text */
+.answer {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  display: none; /* hidden by default */
+}
+
+/* Active state to show answer */
+.qa.active .answer {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Optional simple fadeIn animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

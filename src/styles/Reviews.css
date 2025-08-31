@@ -1,0 +1,187 @@
+.parent {
+  width: min(300px, 90vw);
+  padding: clamp(15px, 3vw, 20px);
+  perspective: 1000px;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+.card {
+  padding-top: clamp(40px, 6vw, 50px);
+  border: clamp(2px, 0.5vw, 3px) solid #7bcebb;
+  transform-style: preserve-3d;
+  background-image: url("../assets/images/PatternLatestNew.png");
+  background-size: clamp(45px, 8vw, 60px) clamp(45px, 8vw, 60px);
+  background-position: 0 0, 0 0;
+  background-color: #ffffff;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px clamp(20px, 4vw, 30px)
+    clamp(20px, 4vw, 30px) -10px;
+  transition: all 0.5s ease-in-out;
+  border-radius: clamp(8px, 1.5vw, 12px);
+}
+
+.card:hover {
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+  background: #00bfa6;
+  transition: all 0.5s ease-in-out;
+  padding: clamp(40px, 8vw, 60px) clamp(20px, 4vw, 25px) clamp(20px, 4vw, 25px)
+    clamp(20px, 4vw, 25px);
+  transform-style: preserve-3d;
+  border-radius: clamp(8px, 1.5vw, 12px);
+}
+
+.content-box .card-title {
+  display: inline-block;
+  color: #ffffff;
+  font-size: clamp(20px, 4vw, 25px);
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+  line-height: 1.2;
+}
+
+.content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+  margin-top: clamp(8px, 2vw, 10px);
+  font-size: clamp(11px, 2vw, 12px);
+  font-weight: 700;
+  color: #ffffff;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+  line-height: 1.4;
+}
+
+.content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+  cursor: pointer;
+  margin-top: clamp(0.8rem, 2vw, 1rem);
+  display: inline-block;
+  font-weight: 900;
+  font-size: clamp(8px, 1.5vw, 9px);
+  text-transform: uppercase;
+  color: #00bfa6;
+  background: #141414;
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.7rem);
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+  border-radius: clamp(3px, 1vw, 5px);
+}
+
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.date-box {
+  position: absolute;
+  top: clamp(20px, 4vw, 30px);
+  right: clamp(20px, 4vw, 30px);
+  height: clamp(50px, 8vw, 60px);
+  width: clamp(50px, 8vw, 60px);
+  background: #ffffff;
+  border: 1px solid #00bfa6;
+  padding: clamp(8px, 1.5vw, 10px);
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px clamp(12px, 2vw, 17px)
+    clamp(8px, 1.5vw, 10px) -10px;
+  border-radius: clamp(6px, 1vw, 8px);
+}
+
+.date-box span {
+  display: block;
+  text-align: center;
+}
+
+.date-box .month {
+  color: #00bfa6;
+  font-size: clamp(8px, 1.5vw, 9px);
+  font-weight: 700;
+}
+
+.date-box .date {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 900;
+  color: #00bfa6;
+}
+
+.reviews_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(15px, 3vw, 20px);
+  padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 1024px) {
+  .reviews_section {
+    gap: clamp(12px, 2.5vw, 18px);
+  }
+
+  .parent {
+    width: min(280px, 85vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews_section {
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 25px);
+    padding: clamp(20px, 4vw, 25px) clamp(15px, 3vw, 20px);
+  }
+
+  .parent {
+    width: min(320px, 90vw);
+  }
+
+  .card:hover {
+    transform: rotate3d(0.3, 1, 0, 15deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews_section {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .parent {
+    width: min(300px, 95vw);
+    padding: 15px;
+  }
+
+  .card {
+    padding-top: 35px;
+  }
+
+  .content-box {
+    padding: 35px 20px 20px 20px;
+  }
+
+  .date-box {
+    top: 15px;
+    right: 15px;
+    height: 45px;
+    width: 45px;
+    padding: 6px;
+  }
+
+  .card:hover {
+    transform: none;
+    background-position: -50px 50px, -50px 50px;
+  }
+}

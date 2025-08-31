@@ -1,0 +1,255 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #25d0a0;
+  font-family: Arial, sans-serif;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: clamp(8px, 1.5vw, 10px) 0;
+  z-index: 1000;
+}
+
+/* Logo section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  margin-left: clamp(20px, 8vw, 90px);
+  cursor: pointer;
+
+}
+
+.navbar-logo img {
+  height: clamp(90px, 8vw, 85px);
+  /* Increased from 100px to 110px for mobile */
+  width: auto;
+  margin-bottom: -35px;
+  margin-top: -23px;
+}
+
+/* Desktop navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-right: clamp(20px, 5vw, 50px);
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: clamp(140px, 20vw, 160px);
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 99;
+}
+
+.dropdown-menu a {
+  padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 15px);
+  color: black;
+  text-decoration: none;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  font-weight: 400;
+  transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background: #25d0a0;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Profile button */
+.profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 999px;
+  padding: clamp(0.3rem, 1vw, 0.4rem) clamp(0.6rem, 1.5vw, 0.9rem);
+  color: #000;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: clamp(4px, 1vw, 6px);
+  cursor: pointer;
+  margin-right: clamp(20px, 5vw, 50px);
+}
+
+.burger .line {
+  width: clamp(20px, 4vw, 25px);
+  height: clamp(2px, 0.5vw, 3px);
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Burger animation when open */
+.burger.open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open .line2 {
+  opacity: 0;
+}
+
+.burger.open .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0 */
+  background-color: #25d0a0;
+  gap: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu.active {
+    margin-top: 45px;
+  }
+}
+
+.mobile-menu a {
+  color: #fff;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.mobile-menu a:hover {
+  opacity: 0.8;
+}
+
+.mobile-menu .profile-btn {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(1rem, 2.5vw, 1.2rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced responsive design */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .navbar-logo {
+    margin-left: clamp(15px, 4vw, 40px);
+  }
+
+  .navbar-logo img {
+    height: clamp(90px, 9vw, 80px);
+    /* Increased from 50px to 70px for mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    /* Hide desktop links */
+  }
+
+  .burger {
+    display: flex;
+    /* Show burger icon */
+  }
+
+  .navbar-logo {
+    margin-left: clamp(15px, 4vw, 20px);
+  }
+
+  .navbar-logo img {
+    height: clamp(80px, 9vw, 65px);
+    /* Increased from 50px to 70px for mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 8px 0;
+  }
+
+  .navbar-logo {
+    margin-left: 15px;
+  }
+
+  .navbar-logo img {
+    height: clamp(80px, 12vw, 55px);
+    /* Increased from 45px to 60px for mobile */
+  }
+
+  .burger {
+    margin-right: 15px;
+  }
+
+  .mobile-menu {
+    gap: clamp(20px, 5vh, 30px);
+  }
+
+  .mobile-menu a {
+    font-size: clamp(1.1rem, 5vw, 1.3rem);
+  }
+}

@@ -1,0 +1,538 @@
+/* =======================
+   Padel-Themed Download Section
+======================= */
+.download-section {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9f5 100%);
+  padding: clamp(60px, 10vw, 100px) clamp(20px, 4vw, 40px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Background elements */
+.background-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(38, 209, 161, 0.08);
+  animation: float 20s infinite ease-in-out;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 50px;
+  right: 100px;
+  animation-delay: -5s;
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  right: 20%;
+  animation-delay: -10s;
+}
+
+.wave {
+  position: absolute;
+  background: rgba(38, 209, 161, 0.05);
+  border-radius: 50%;
+}
+
+.wave-1 {
+  width: 500px;
+  height: 500px;
+  bottom: -250px;
+  left: -250px;
+  animation: pulse 15s infinite ease-in-out;
+}
+
+.wave-2 {
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  right: -200px;
+  animation: pulse 12s infinite ease-in-out;
+  animation-delay: -7s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, 40px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.95);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Download container */
+.download-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+/* Text content */
+.text-content {
+  padding-right: 20px;
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1e293b;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #26d1a1;
+  border-radius: 2px;
+}
+
+.text-accent {
+  color: #26d1a1;
+}
+
+.description {
+  font-size: clamp(16px, 2.5vw, 18px);
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+/* Stats container */
+.stats-container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(38, 209, 161, 0.1);
+  color: #26d1a1;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #26d1a1;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Download buttons */
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.store-button {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(38, 209, 161, 0.15);
+  border: 1px solid #e2e8f0;
+  background: white;
+}
+
+.store-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(38, 209, 161, 0.2);
+  border-color: #26d1a1;
+}
+
+.google-play:hover {
+  background: linear-gradient(135deg, white 0%, #f8fafc 100%);
+}
+
+.app-store {
+  background: #1e293b;
+  border-color: #1e293b;
+}
+
+.app-store:hover {
+  background: #0f172a;
+  border-color: #0f172a;
+}
+
+.button-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.get-it {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.app-store .get-it {
+  color: #cbd5e1;
+}
+
+.store-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.app-store .store-name {
+  color: white;
+}
+
+/* Phone content */
+.phone-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.phone-image {
+  width: 100%;
+  max-width: 300px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 40px;
+   
+  transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.phone-image:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-10px);
+  box-shadow: 
+    0 35px 60px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.phone-highlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 580px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgba(38, 209, 161, 0.1) 0%, transparent 50%);
+  z-index: -1;
+  filter: blur(15px);
+}
+
+/* Floating elements */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  color: #26d1a1;
+  font-size: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: floatIcon 15s infinite ease-in-out;
+}
+
+.icon-1 {
+  top: 10%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.icon-2 {
+  bottom: 20%;
+  left: 5%;
+  animation-delay: -5s;
+}
+
+.icon-3 {
+  top: 50%;
+  right: 0;
+  animation-delay: -10s;
+}
+
+.icon-4 {
+  top: 20%;
+  left: 0;
+  animation-delay: -7s;
+}
+
+.icon-5 {
+  bottom: 10%;
+  right: 20%;
+  animation-delay: -12s;
+}
+
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(20px, 30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-15px, 25px) rotate(240deg);
+  }
+}
+
+/* Feature icons */
+.feature-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  color: #26d1a1;
+  font-size: 24px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  background: #26d1a1;
+  color: white;
+}
+
+.feature-item span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+/* =======================
+   Responsive Design
+======================= */
+@media (max-width: 968px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+  
+  .text-content {
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .stats-container {
+    justify-content: center;
+  }
+  
+  .download-buttons {
+    justify-content: center;
+  }
+  
+  .phone-content {
+    order: 1;
+  }
+  
+  .phone-image {
+    max-width: 250px;
+  }
+  
+  .feature-icons {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .store-button {
+    width: 220px;
+  }
+  
+  .phone-image {
+    max-width: 220px;
+  }
+  
+  .floating-icon {
+    display: none;
+  }
+  
+  .feature-icons {
+    gap: 20px;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-section {
+    padding: 40px 20px;
+  }
+  
+  .title {
+    font-size: 32px;
+  }
+  
+  .store-button {
+    padding: 14px 20px;
+  }
+  
+  .button-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .get-it {
+    font-size: 11px;
+  }
+  
+  .store-name {
+    font-size: 16px;
+  }
+  
+  .phone-image {
+    max-width: 200px;
+  }
+  
+  .feature-icons {
+    gap: 15px;
+  }
+  
+  .feature-item span {
+    font-size: 12px;
+  }
+}

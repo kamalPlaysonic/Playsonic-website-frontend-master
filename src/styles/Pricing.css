@@ -1,0 +1,106 @@
+/*body {
+  background-color: #fff;
+  margin: 0;              
+  padding: 0;
+  min-height: 100vh;      
+  display: flex;
+  flex-direction: column;
+}
+*/
+
+/* Container for the whole Pricing page */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: black;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Main content pushes footer down */
+.content-wrap {
+  flex: 1;
+  padding: clamp(15px, 3vw, 20px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  background: #f8f8f8;
+  padding: clamp(15px, 3vw, 20px);
+  text-align: center;
+}
+
+#pricing {
+  color: black;
+  margin-bottom: clamp(30px, 5vw, 40px);
+  margin-top: clamp(60px, 10vw, 80px);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+#flexible-plans {
+  color: black;
+  margin-top: clamp(30px, 5vw, 40px);
+  margin-bottom: clamp(30px, 5vw, 40px);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+}
+#remark {
+  margin-top: clamp(15px, 3vw, 20px);
+  margin-bottom: clamp(25px, 4vw, 30px);
+  font-size: clamp(12px, 2vw, 14px);
+  text-align: center;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 clamp(15px, 3vw, 20px);
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+  .page-container {
+    font-size: 14px;
+  }
+
+  .content-wrap {
+    padding: clamp(10px, 2vw, 15px);
+  }
+
+  #pricing {
+    margin-top: clamp(40px, 8vw, 60px);
+    margin-bottom: clamp(20px, 4vw, 30px);
+  }
+
+  #flexible-plans {
+    margin-top: clamp(20px, 4vw, 30px);
+    margin-bottom: clamp(20px, 4vw, 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrap {
+    padding: 10px;
+  }
+
+  #pricing {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
+  }
+
+  #flexible-plans {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  #remark {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+}
